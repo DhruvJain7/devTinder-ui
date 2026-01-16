@@ -16,6 +16,7 @@
 - Whenever you are making API call so pass axios =>{withCredentials : true}
 - Install Redux Toolkit
 - Install react-redux + @reduxjs/tookit ==> configureStore==>Provider ==>createSlice =>add reducer to store.
+- In Order to make our Profile to remain logged even when refresh ==>Body ==> GET API call to profile view ==>Inside UseEffect ==>add user to store.
 
 ## Component Design
 - Body
