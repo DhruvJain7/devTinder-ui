@@ -1,11 +1,56 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* Apply the theme to the body */
+/* HIJACK THE DARK THEME - LIGHTER VERSION */
+[data-theme="dark"] {
+    /* --p: Primary Color (Blue #58A6FF) */
+    --p: 74% 0.16 250;
+    /* --pc: Text on Button (Dark) */
+    --pc: 13% 0.03 260;
+
+    /* === THE FIX FOR DARKNESS === */
+
+    /* 1. BODY BACKGROUND (Lighter) */
+    /* Changed from Pitch Black (#0D1117) to Dark Gray (#161B22) */
+    --b1: 17% 0.03 260;
+
+    /* 2. CARD/NAVBAR BACKGROUND (Significantly Lighter) */
+    /* Changed to #21262D to stand out against the body */
+    --b2: 22% 0.03 260;
+
+    /* 3. INPUT BACKGROUND (Deep Dark) */
+    /* We keep inputs dark (#0D1117) so they look like "holes" in the card */
+    --b3: 13% 0.03 260;
+}
+
+/* GLOBAL STYLES */
 body {
-    /* 1. bg-base-300: Uses your "IDE Dark" color (#0D1117)
-     2. text-base-content: Sets the default text color to gray-white
-     3. min-h-screen: Ensures the background covers 100% height even if content is short
-  */
-    @apply text-base-content min-h-screen;
+    background-color: oklch(var(--b1));
+    color: #c9d1d9;
+}
+
+/* NAVBAR & FOOTER FIX */
+/* Force Navbar/Footer to use the Lighter (b2) color so they don't blend into body */
+.navbar,
+.footer {
+    background-color: oklch(var(--b2)) !important;
+    border-color: #30363d !important;
+}
+
+/* LOGIN TITLE FIX */
+.text-primary {
+    color: #58a6ff !important;
+}
+
+/* BUTTON & INPUT OVERRIDES */
+.btn-primary {
+    background-color: #58a6ff !important;
+    border-color: #58a6ff !important;
+    color: #0d1117 !important;
+}
+
+.input:focus {
+    border-color: #58a6ff !important;
+    outline: none !important;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
 }
