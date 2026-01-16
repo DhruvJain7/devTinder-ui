@@ -1,8 +1,11 @@
+import Logo from "./Logo";
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-300 shadow-sm">
+    <div className="navbar bg-base-100 border-b border-base-300 shadow-sm h-16">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">👨‍💻DevTinder </a>
+        <a className="btn btn-ghost text-xl">
+          <Logo />
+        </a>
       </div>
       <div className="flex gap-2">
         <input

@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Apply the theme to the body */
+body {
+    /* 1. bg-base-300: Uses your "IDE Dark" color (#0D1117)
+     2. text-base-content: Sets the default text color to gray-white
+     3. min-h-screen: Ensures the background covers 100% height even if content is short
+  */
+    @apply text-base-content min-h-screen;
+}

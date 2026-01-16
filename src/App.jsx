@@ -5,7 +5,7 @@ import Login from "./Login";
 import Profile from "./Profile";
 function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<Body />}>
@@ -14,7 +14,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
