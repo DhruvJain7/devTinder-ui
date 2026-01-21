@@ -8,6 +8,7 @@ import LogoIcon from "./LogoIcon";
 const Login = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogin = async () => {
@@ -24,7 +25,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       return navigate("/");
     } catch (err) {
-      console.error(err);
+      setError(err?.response?.data || "Something went wrong");
     }
   };
   return (
@@ -67,8 +68,8 @@ const Login = () => {
               />
             </fieldset>
           </div>
-
-          <div className="card-actions justify-end mt-6">
+          <p className="text-red-500">{error}</p>
+          <div className="card-actions justify-end mt-2">
             <button
               className="btn btn-primary w-full font-header text-lg text-white shadow-[0_0_10px_rgba(88,166,255,0.2)] hover:shadow-[0_0_20px_rgba(88,166,255,0.5)] border-none transition-all duration-300"
               onClick={handleLogin}

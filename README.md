@@ -1,5 +1,5 @@
 # DevTinder
-
+------
 - Created a Vite + React  application.
 - Remove any unnecessary premade files and make it accordingly.
 - Install tailwind css
@@ -7,6 +7,7 @@
 - Component library daisy ui & install it.
 - Add Navbar Component to the App.jsx.
 - Installed React Router.
+------
 - Create BrowserRouter > Routes > Route =/Body >RouteChildren.
 - Create an Outlet in your body component.
 - Create a Footer Component.
@@ -17,6 +18,12 @@
 - Install Redux Toolkit
 - Install react-redux + @reduxjs/tookit ==> configureStore==>Provider ==>createSlice =>add reducer to store.
 - In Order to make our Profile to remain logged even when refresh ==>Body ==> GET API call to profile view ==>Inside UseEffect ==>add user to store.
+- You should not be able to access other routes without login.
+- IF token is not present, redirect user to login page.
+- Logout Feature
+- Profile Page
+- Get the feed and add the feed in the store.
+- build the user card on feed
 
 ## Component Design
 - Body
