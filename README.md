@@ -28,6 +28,13 @@
 - Show Toast Message on saving the profile
 - New Page -See all my connections
 - New Page -See all my requests
+- Feature - Accept/Reject Connection Request
+- Send/ignore the user card from Feed
+
+Remaining:
+
+- Signup New User
+- E2ETesting
 
 ## Component Design
 - Body
