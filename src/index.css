@@ -1,56 +1,131 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* HIJACK THE DARK THEME - LIGHTER VERSION */
+/* =========================================
+   1. THEME OVERRIDES (Standard CSS)
+   ========================================= */
 [data-theme="dark"] {
     /* --p: Primary Color (Blue #58A6FF) */
     --p: 74% 0.16 250;
-    /* --pc: Text on Button (Dark) */
+
+    /* --pc: Text on Button (Dark #0D1117) */
     --pc: 13% 0.03 260;
 
-    /* === THE FIX FOR DARKNESS === */
-
-    /* 1. BODY BACKGROUND (Lighter) */
-    /* Changed from Pitch Black (#0D1117) to Dark Gray (#161B22) */
+    /* --b1: BODY Background (Dark Gray #161B22) */
     --b1: 17% 0.03 260;
 
-    /* 2. CARD/NAVBAR BACKGROUND (Significantly Lighter) */
-    /* Changed to #21262D to stand out against the body */
+    /* --b2: CARD/NAV Background (Lighter #21262D) */
     --b2: 22% 0.03 260;
 
-    /* 3. INPUT BACKGROUND (Deep Dark) */
-    /* We keep inputs dark (#0D1117) so they look like "holes" in the card */
+    /* --b3: INPUT Background (Deep Dark #0D1117) */
     --b3: 13% 0.03 260;
 }
 
-/* GLOBAL STYLES */
+/* Global Body Settings */
 body {
     background-color: oklch(var(--b1));
     color: #c9d1d9;
+    /* Use standard font stack instead of custom class */
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* NAVBAR & FOOTER FIX */
-/* Force Navbar/Footer to use the Lighter (b2) color so they don't blend into body */
-.navbar,
-.footer {
+/* Force Navbar/Footer to be distinct */
+.navbar, .footer {
     background-color: oklch(var(--b2)) !important;
     border-color: #30363d !important;
 }
 
-/* LOGIN TITLE FIX */
+/* Fix "Login" Title Color */
 .text-primary {
     color: #58a6ff !important;
 }
 
-/* BUTTON & INPUT OVERRIDES */
-.btn-primary {
-    background-color: #58a6ff !important;
-    border-color: #58a6ff !important;
-    color: #0d1117 !important;
-}
-
+/* Fix Input Glow */
 .input:focus {
     border-color: #58a6ff !important;
     outline: none !important;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
 }
+
+/* =========================================
+   2. BUTTON COMPONENT KIT
+   ========================================= */
+
+/* PRIMARY BUTTON (Save_, Login_, etc.) */
+.btn-primary {
+    background-color: #58A6FF !important;
+    border-color: #58A6FF !important;
+    color: #0D1117 !important;
+
+    /* Manually setting font to avoid "unknown utility" error */
+    font-family: "JetBrains Mono", monospace !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em;
+
+    box-shadow: 0 0 10px rgba(88,166,255,0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #79c0ff !important;
+    border-color: #79c0ff !important;
+    box-shadow: 0 0 20px rgba(88,166,255,0.6);
+    transform: translateY(-1px);
+}
+
+/* SECONDARY BUTTON (Cancel, Edit) */
+.btn-secondary {
+    background-color: #21262D !important;
+    border-color: #30363D !important;
+    color: #C9D1D9 !important;
+    font-family: "JetBrains Mono", monospace !important;
+}
+
+.btn-secondary:hover {
+    background-color: #30363D !important;
+    border-color: #8B949E !important;
+    color: #ffffff !important;
+}
+.btn-accept {
+    background-color: #2ea043 !important; /* GitHub 'Merge' Green */
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: #ffffff !important; /* White text looks better on this green */
+
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px; /* Specific from your image */
+
+    box-shadow: 0 0 10px rgba(46, 160, 67, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-accept:hover {
+    background-color: #3fb950 !important; /* Brighter Green */
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.6);
+    transform: translateY(-1px);
+}
+
+/* THE "REJECT" BUTTON (Red) */
+/* Usage: <button className="btn btn-reject">REJECT</button> */
+.btn-reject {
+    background-color: #da3633 !important; /* GitHub 'Delete' Red */
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: #ffffff !important;
+
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+
+    box-shadow: 0 0 10px rgba(218, 54, 51, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-reject:hover {
+    background-color: #f85149 !important; /* Brighter Red */
+    box-shadow: 0 0 20px rgba(218, 54, 51, 0.6);
+    transform: translateY(-1px);
+}
+
+/*

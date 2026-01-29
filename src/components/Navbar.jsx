@@ -22,18 +22,28 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="navbar bg-base-100 border-b border-base-300 shadow-sm h-16">
-      <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">
+    // 1. BACKDROP BLUR & BORDER (Glassmorphism Effect)
+    <div className="navbar fixed top-0 z-[999] w-full h-16 bg-[#0D1117]/80 backdrop-blur-md border-b border-[#30363D]">
+      {/* 2. MAX-WIDTH CONTAINER (Keeps content centered on big screens) */}
+      <div className="flex flex-1 justify-between items-center w-full max-w-7xl mx-auto px-6">
+        {/* LOGO */}
+        <Link to="/" className="btn btn-ghost p-0 hover:bg-transparent">
+          {/* If Logo has text, ensure it's font-bold tracking-tight */}
           <Logo />
         </Link>
-      </div>
-      <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input input-bordered w-24 md:w-auto"
-        />
+
+        {/* JOIN BUTTON */}
+        <Link to="/login">
+          {/* 3. CUSTOM 'GIT' STYLE BUTTON */}
+          <button className="btn min-h-10 h-10 px-5 bg-[#238636] hover:bg-[#2ea043] border-[#30363D] text-white font-semibold rounded-md shadow-sm transition-all">
+            Join
+            {/* The Commit Subtext */}
+            <span className="hidden sm:inline text-[10px] font-mono text-green-100/60 lowercase ml-2 pt-0.5 border-l border-white/20 pl-2">
+              git commit
+            </span>
+          </button>
+        </Link>
+
         {user && (
           <div className="dropdown dropdown-end mx-5 flex ">
             <p className="px-4">Welcome,{user.firstName}</p>
