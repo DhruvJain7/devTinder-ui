@@ -45,7 +45,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center my-20">
+    <div className="flex justify-center items-center my-30">
       <div className="card bg-base-200 w-96 shadow-xl border border-base-300">
         <div className="card-body">
           <div className="flex flex-col items-center mb-4">
