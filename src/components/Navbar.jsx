@@ -33,16 +33,6 @@ const Navbar = () => {
         </Link>
 
         {/* JOIN BUTTON */}
-        <Link to="/login">
-          {/* 3. CUSTOM 'GIT' STYLE BUTTON */}
-          <button className="btn min-h-10 h-10 px-5 bg-[#238636] hover:bg-[#2ea043] border-[#30363D] text-white font-semibold rounded-md shadow-sm transition-all">
-            Join
-            {/* The Commit Subtext */}
-            <span className="hidden sm:inline text-[10px] font-mono text-green-100/60 lowercase ml-2 pt-0.5 border-l border-white/20 pl-2">
-              git commit
-            </span>
-          </button>
-        </Link>
 
         {user && (
           <div className="dropdown dropdown-end mx-5 flex ">

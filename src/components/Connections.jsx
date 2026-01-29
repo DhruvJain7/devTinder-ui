@@ -27,14 +27,14 @@ const Connections = () => {
 
   if (connections.length === 0)
     return (
-      <h1 className="text-bold text-2xl text-center mt-10">
+      <h1 className="text-bold text-2xl text-center mt-20">
         No connections found.
       </h1>
     );
 
   return (
-    <div className="flex flex-col items-center my-10 px-4">
-      <h1 className="font-bold text-white text-3xl mb-2">Connections</h1>
+    <div className="flex flex-col items-center my-20 px-4">
+      <h1 className="font-bold text-white text-3xl mb-2 mt-4">Connections</h1>
       <p className="text-sm text-base-content/70 font-body mb-6">
         Your stack, your people.
       </p>

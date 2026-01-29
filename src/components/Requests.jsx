@@ -120,13 +120,13 @@ const Requests = () => {
 
   if (requests.length === 0)
     return (
-      <h1 className="flex justify-center my-10 text-gray-500">
+      <h1 className="flex justify-center my-20 text-gray-500">
         No Requests Found
       </h1>
     );
 
   return (
-    <div className="flex flex-col items-center my-10 px-4">
+    <div className="flex flex-col items-center my-20 px-4">
       <h1 className="font-bold text-white text-3xl mb-2">Pull Requests</h1>
       <p className="text-sm text-base-content/70 font-body mb-8">
         Review incoming connection requests.

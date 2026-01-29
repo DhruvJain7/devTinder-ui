@@ -36,9 +36,20 @@ const Feed = () => {
   // 2. Empty State
   if (feed.length <= 0)
     return (
-      <h1 className="flex justify-center my-10 text-white">
-        No new Users found!
-      </h1>
+      // 1. h-screen: Takes full height
+      // 2. flex justify-center items-center: Perfect centering
+      // 3. mt-[-64px]: Optional adjustment to account for navbar height visually
+      <div className="flex justify-center items-center h-screen bg-[#0D1117]">
+        <div className="text-center p-10 bg-[#161B22] border border-[#30363D] rounded-xl shadow-2xl">
+          <div className="text-5xl mb-4">🎉</div>
+          <h1 className="text-xl font-bold text-white mb-2">
+            You've explored everyone!
+          </h1>
+          <p className="text-gray-400 text-sm">
+            Check back later for more developers.
+          </p>
+        </div>
+      </div>
     );
 
   // 3. Render Feed
