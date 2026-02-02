@@ -79,6 +79,7 @@ Remaining:
     - config nginx sudo nano /etc/nginx/sites-available/default 
     - restart nginx:sudo systemctl restart nginx
     - Modify the BASE_URL
+    ---------
 
     ### Update the config for Mapping:
     - Frontend = http://13.60.80.12/
@@ -116,3 +117,8 @@ Remaining:
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
     }
+  ## Adding a custom Domain name
+  - purchased domain name from godaddy
+  - signup on cloudflare
+  - change the nameservers on go daddy
+  - Point it to cloudflare
