@@ -54,7 +54,7 @@ const UserCard = ({ user, isPreview = false }) => {
       dragConstraints={{ left: 0, right: 0 }}
       onDragEnd={handleDragEnd}
       animate={controls}
-      className={`relative w-96 bg-[#161B22] rounded-2xl overflow-hidden shadow-2xl border border-[#30363D] flex flex-col ${
+      className={`relative w-96 bg-[#161B22] rounded-2xl my-20 overflow-hidden shadow-2xl border border-[#30363D] flex flex-col ${
         isPreview ? "cursor-default" : "cursor-grab active:cursor-grabbing"
       }`}
     >
@@ -131,7 +131,7 @@ const UserCard = ({ user, isPreview = false }) => {
             </button>
 
             <button
-              className="btn btn-accept flex-grow hover:bg-green-600 border-[#30363D]"
+              className="btn btn-accept grow hover:bg-green-600 border-[#30363D]"
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => handleSendRequest("interested", _id)}
             >

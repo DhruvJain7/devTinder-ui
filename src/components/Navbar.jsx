@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useLocation } from "react-router";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { removeUser } from "../utils/userSlice";
@@ -10,6 +10,7 @@ const Navbar = () => {
   console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = async () => {
     try {
@@ -33,6 +34,16 @@ const Navbar = () => {
         </Link>
 
         {/* JOIN BUTTON */}
+        {!user && location.pathname === "/" && (
+          <Link to="/login">
+            <button className="btn btn-accept  hover:bg-green-600 border-[#30363D]">
+              &lt;Login/&gt;
+              <span className="text-[10px] font-normal text-white/60 lowercase ml-1">
+                commit
+              </span>
+            </button>
+          </Link>
+        )}
 
         {user && (
           <div className="dropdown dropdown-end mx-5 flex ">

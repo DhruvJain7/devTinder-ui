@@ -23,7 +23,6 @@ const TerminalWidget = () => {
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
 
-        {/* The Logs - FIXED: Replaced '>' with '&gt;' */}
         <div className="px-6 font-mono space-y-2">
           <p className="text-gray-500">
             $ npm run find-match --skills="React, Node"
@@ -167,7 +166,7 @@ const Landing = () => {
       <BackgroundEffect />
 
       {/* HERO SECTION */}
-      <main className="relative z-10 flex-grow flex flex-col justify-center items-center text-center px-4 mt-10 py-10">
+      <main className="relative z-10 grow flex flex-col justify-center items-center text-center px-4 mt-10 py-10">
         {/* Animated Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -186,7 +185,7 @@ const Landing = () => {
           className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-5xl"
         >
           Stop Coding Alone. <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#79C0FF] to-[#D2A8FF]">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#79C0FF] to-[#D2A8FF]">
             Find Your Next
           </span>
           {/* Typewriter Text */}
@@ -283,14 +282,10 @@ const Landing = () => {
           </div>
         </motion.div>
 
-        {/* === NEW ADDITION 2: TESTIMONIALS === */}
         <Testimonials />
 
-        {/* === NEW ADDITION 3: MARQUEE === */}
         <TechStackMarquee />
       </main>
-
-      {/* FOOTER STATS */}
     </div>
   );
 };

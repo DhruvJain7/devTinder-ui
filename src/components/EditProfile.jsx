@@ -71,7 +71,7 @@ const EditProfile = ({ user }) => {
       {/* Main Layout: Flex Row on LG screens, Column on smaller */}
       <div className="flex flex-col lg:flex-row justify-center items-start my-10 pb-20 pt-10 gap-10 px-4">
         {/* --- LEFT COLUMN: EDIT FORM --- */}
-        <div className="flex justify-center items-center w-full max-w-[400px]">
+        <div className="flex justify-center items-center w-full max-w-100">
           <div className="card bg-base-200 w-full shadow-xl border border-base-300">
             <div className="card-body">
               <div className="flex flex-col items-center mb-4">

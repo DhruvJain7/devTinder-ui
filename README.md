@@ -43,3 +43,12 @@ Remaining:
    - Route=/ ==> Login
    - Route=/ ==> Connections
    - Route=/ ==> Profile
+
+
+## Deployment
+
+- Signup on AWS
+- Launch instance
+- chmod 400 <secret>.pem
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-13-60-80-12.eu-north-1.compute.amazonaws.com
+- Install your specific node version.
