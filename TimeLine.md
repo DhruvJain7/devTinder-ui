@@ -122,3 +122,9 @@ Remaining:
   - signup on cloudflare
   - change the nameservers on go daddy
   - Point it to cloudflare
+
+# Sending Emails via SES
+- Create a IAM user
+- Give access to AmazonSESFullAccess
+- Verify your domain Name + email Address
+- Install SDK and make sure we are on -v3
